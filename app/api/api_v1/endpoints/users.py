@@ -6,6 +6,6 @@ router = APIRouter()
 async def root():
     return {"message": "Get Users!"}
 
-@router.get("/")
+@router.get("/test")
 async def root():
     return {"message": "Test users"}
