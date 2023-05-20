@@ -4,4 +4,4 @@ router = APIRouter()
 
 @router.get("/")
 async def root():
-    return {"message": "Get Users!"}
+    return {"messagey": "Get Users!"}
