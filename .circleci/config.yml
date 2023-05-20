@@ -19,8 +19,8 @@ jobs:
             name: Install Dependencies
             command: pip install -r requirements.txt
         - run:
-          name: Test
-          command: pytest
+            name: Test
+            command: pytest
 
 workflows:
   build-test-and-deploy:
