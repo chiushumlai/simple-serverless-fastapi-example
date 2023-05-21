@@ -68,3 +68,19 @@ async def insert_db():
     # json_result = json.dumps(results)
     # print(json_result)
     return {"message": "successfully inserted"}
+
+@router.get("/show")
+async def insert_db():
+    conn = psycopg2.connect(
+        host = host,
+        port = port,
+        database = database,
+        user = username,
+        password = password
+    )
+    conn.autocommit = True
+    cur = conn.cursor()
+    cur.execute('''select * from customerInfo''')
+    results = cur.fetchall()
+    json_result = json.dumps(results)
+    return json_result
