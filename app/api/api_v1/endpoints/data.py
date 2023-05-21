@@ -6,11 +6,17 @@ import json
 from app.core import config
 
 router = APIRouter()
-host = config.settings.postgres_host
-port = config.settings.postgres_port
-username = config.settings.postgres_username
-password = config.settings.postgres_password
-database = config.settings.postgres_database
+# host = config.settings.postgres_host
+# port = config.settings.postgres_port
+# username = config.settings.postgres_username
+# password = config.settings.postgres_password
+# database = config.settings.postgres_database
+
+host = "cicd-test-csl.cgmxl7co3jeh.us-east-1.rds.amazonaws.com"
+port = 5432
+username = "postgres"
+password = "abcd1234"
+database = "postgres"
 
 @router.get("/")
 async def root():
