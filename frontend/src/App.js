@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from 'react'
-import { axiosClient } from './lib/fetch/ApiClient';
+import { axiosClient } from './resources/fetch/ApiClient';
 
 function App() {
 
