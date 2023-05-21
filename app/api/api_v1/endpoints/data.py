@@ -70,7 +70,7 @@ async def insert_db():
     return {"message": "successfully inserted"}
 
 @router.get("/show")
-async def insert_db():
+async def show_db():
     conn = psycopg2.connect(
         host = host,
         port = port,
