@@ -4,13 +4,13 @@ from app.core import config
 from app.api.api_v1.api import router as api_router
 
 
-app = FastAPI()
+appc = FastAPI()
 
 
-@app.get("/")
+@appc.get("/")
 async def root():
     return {"message": f"This is our secret key: {config.settings.secret_key}"}
 
 
-app.include_router(api_router, prefix=config.settings.prefix)
-handler = Mangum(app)
+appc.include_router(api_router, prefix=config.settings.prefix)
+handler = Mangum(appc)
