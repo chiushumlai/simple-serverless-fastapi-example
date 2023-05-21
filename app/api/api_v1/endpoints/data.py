@@ -57,7 +57,7 @@ async def insert_db():
     )
     conn.autocommit = True
     cur = conn.cursor()
-    cur.execute('''insert into customerInfo (name, age) values ('abc', extract(minute from timestamp now()))''')
+    cur.execute('''insert into customerInfo (name, age) values ('abc', extract(minute from now()))''')
     # results = cur.fetchall()
     # json_result = json.dumps(results)
     # print(json_result)
