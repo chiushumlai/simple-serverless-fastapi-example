@@ -1,0 +1,29 @@
+from fastapi import APIRouter
+import psycopg2
+from psycopg2.extras import RealDictCursor
+import json
+
+from app.core import config
+
+router = APIRouter()
+host = config.settings.postgres_host
+port = config.settings.postgres_port
+username = config.settings.postgres_username
+password = config.settings.postgres_password
+database = config.settings.postgres_database
+
+@router.get("/")
+async def root():
+    conn = psycopg2.connect(
+        host = host,
+        port = port,
+        database = database,
+        user = username,
+        password = password
+    )
+    cur = conn.cursor(cursor_factory=RealDictCursor)
+    cur.execute('''create database mytestdb''')
+    # results = cur.fetchall()
+    # json_result = json.dumps(results)
+    # print(json_result)
+    return {"message": 'Successfully created db'}
