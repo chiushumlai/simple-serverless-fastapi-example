@@ -22,8 +22,8 @@ async def root():
         password = password
     )
     cur = conn.cursor(cursor_factory=RealDictCursor)
-    cur.execute('''create database mytestdb''')
-    # results = cur.fetchall()
+    cur.execute('''select now()''')
+    results = cur.fetchall()
     # json_result = json.dumps(results)
     # print(json_result)
-    return {"message": 'Successfully created db'}
+    return {"message": results}
